@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/oauth2-angular'),
+      dir: require('path').join(__dirname, './coverage/wso2-consumer'),
       subdir: '.',
       reporters: [
         { type: 'html' },

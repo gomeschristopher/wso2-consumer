@@ -8,7 +8,7 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'oauth2-angular';
+  title = 'wso2-consumer';
 
   constructor(private oAuthService: OAuthService,
     private http: HttpClient) {}
