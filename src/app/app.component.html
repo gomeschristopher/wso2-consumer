@@ -1,8 +1,7 @@
-<button *ngIf="!username" (click)="login()">Login</button>
-
-<h1 *ngIf="username">Hello {{ username }}!</h1>
-
-<div *ngIf="username">
-  <button  (click)="logout()">Logout</button>
-  <button (click)="fetchUserData()">Get data</button>
-</div>
+@if(!username) {
+<button (click)="login()">Login</button>
+} @else {
+<h1>Hello {{ username }}!</h1>
+<button (click)="logout()">Logout</button>
+<button (click)="fetchUserData()">Fetch User Data</button>
+}
