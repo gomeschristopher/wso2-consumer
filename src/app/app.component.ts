@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: true
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  standalone: true
 })
 export class AppComponent {
   title = 'wso2-consumer';
 
   constructor(private oAuthService: OAuthService,
-    private http: HttpClient) {}
+    private http: HttpClient) { }
 
   login() {
     this.oAuthService.initLoginFlow();
@@ -26,6 +26,12 @@ export class AppComponent {
     var claims: any = this.oAuthService.getIdentityClaims();
     if (!claims) return null;
     return claims.username;
+  }
+
+  get givenName() {
+    var claims = this.oAuthService.getIdentityClaims();
+    if (!claims) return null;
+    return claims['given_name'];
   }
 
   fetchUserData() {

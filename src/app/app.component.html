@@ -2,6 +2,9 @@
 <button (click)="login()">Login</button>
 } @else {
 <h1>Hello {{ username }}!</h1>
+@if(givenName) {
+<h1>Your given name :  {{ givenName }}!</h1>
+}
 <button (click)="logout()">Logout</button>
 <button (click)="fetchUserData()">Fetch User Data</button>
 }
